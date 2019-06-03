@@ -1,0 +1,13 @@
+nt vis[N][N];//邻接矩阵，vis[i][j]=1表示i到j可达;
+void warshall(int x,int y)  //warshall算法实现过程;
+{
+    for(int i = 0; i <= N; i++)
+        vis[x][i] += vis[y][i];
+}
+void slove()
+{
+    for(int j = 0; j <= N; j++)
+        for(int i = 0; i <= N; i++)
+            if(vis[i][j])
+                warshall(i,j);
+}
